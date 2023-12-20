@@ -1,0 +1,6 @@
+@TIK.Backend_HostAddress = http://localhost:5268
+
+GET {{TIK.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
