@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIK.Backend", "TIK.Backend\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIK.Shared", "TIK.Shared\TIK.Shared.csproj", "{39984F73-1309-44A5-A4F8-E81F5988D717}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIK.Frontend.Server", "TIK.Frontend\TIK.Frontend\TIK.Frontend.Server.csproj", "{EF286A7E-8D04-4D08-A3B5-108F9CB6F38C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIK.Frontend.Server", "TIK.Frontend\TIK.Frontend\TIK.Frontend.Server.csproj", "{EF286A7E-8D04-4D08-A3B5-108F9CB6F38C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIK.Frontend.Client", "TIK.Frontend\TIK.Frontend.Client\TIK.Frontend.Client.csproj", "{17E36A25-3682-4561-A8C6-0EA0512BDFA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIK.Frontend.Client", "TIK.Frontend\TIK.Frontend.Client\TIK.Frontend.Client.csproj", "{17E36A25-3682-4561-A8C6-0EA0512BDFA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.AppHost", "Aspire\Aspire.AppHost\Aspire.AppHost.csproj", "{A561906E-E73E-4ACC-9D18-CFB4F2C2C9F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aspire.ServiceDefaults", "Aspire\Aspire.ServiceDefaults\Aspire.ServiceDefaults.csproj", "{10E68371-045E-4919-984D-24D8AFA31002}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{17E36A25-3682-4561-A8C6-0EA0512BDFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17E36A25-3682-4561-A8C6-0EA0512BDFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17E36A25-3682-4561-A8C6-0EA0512BDFA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A561906E-E73E-4ACC-9D18-CFB4F2C2C9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A561906E-E73E-4ACC-9D18-CFB4F2C2C9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A561906E-E73E-4ACC-9D18-CFB4F2C2C9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A561906E-E73E-4ACC-9D18-CFB4F2C2C9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E68371-045E-4919-984D-24D8AFA31002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E68371-045E-4919-984D-24D8AFA31002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E68371-045E-4919-984D-24D8AFA31002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E68371-045E-4919-984D-24D8AFA31002}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

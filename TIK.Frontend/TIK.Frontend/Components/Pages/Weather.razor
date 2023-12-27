@@ -45,7 +45,7 @@ else
         await Task.Delay(500);
 
         var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        var summaries = new[] { "FES.Gefrierend", "FES.Belebend", "FES.Kühl", "FES.Kühl", "FES.Mild", "FES.Warm", "FES.Lau", "FES.Heiß", "FES.Glühend", "FES.Sengend" };
         forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
             Date = startDate.AddDays(index),
