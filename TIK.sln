@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIK.Frontend", "TIK.Frontend\TIK.Frontend.csproj", "{E177280E-DC62-4E75-8491-BA072342C973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIK.Backend", "TIK.Backend\TIK.Backend.csproj", "{D39E0EA5-5DEA-445D-ACAC-651982CD17E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIK.Backend", "TIK.Backend\TIK.Backend.csproj", "{D39E0EA5-5DEA-445D-ACAC-651982CD17E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TIK.Shared", "TIK.Shared\TIK.Shared.csproj", "{39984F73-1309-44A5-A4F8-E81F5988D717}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIK.Shared", "TIK.Shared\TIK.Shared.csproj", "{39984F73-1309-44A5-A4F8-E81F5988D717}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIK.Frontend.Server", "TIK.Frontend\TIK.Frontend\TIK.Frontend.Server.csproj", "{EF286A7E-8D04-4D08-A3B5-108F9CB6F38C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TIK.Frontend.Client", "TIK.Frontend\TIK.Frontend.Client\TIK.Frontend.Client.csproj", "{17E36A25-3682-4561-A8C6-0EA0512BDFA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E177280E-DC62-4E75-8491-BA072342C973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E177280E-DC62-4E75-8491-BA072342C973}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E177280E-DC62-4E75-8491-BA072342C973}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E177280E-DC62-4E75-8491-BA072342C973}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D39E0EA5-5DEA-445D-ACAC-651982CD17E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D39E0EA5-5DEA-445D-ACAC-651982CD17E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39E0EA5-5DEA-445D-ACAC-651982CD17E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +25,14 @@ Global
 		{39984F73-1309-44A5-A4F8-E81F5988D717}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39984F73-1309-44A5-A4F8-E81F5988D717}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39984F73-1309-44A5-A4F8-E81F5988D717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF286A7E-8D04-4D08-A3B5-108F9CB6F38C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF286A7E-8D04-4D08-A3B5-108F9CB6F38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF286A7E-8D04-4D08-A3B5-108F9CB6F38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF286A7E-8D04-4D08-A3B5-108F9CB6F38C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E36A25-3682-4561-A8C6-0EA0512BDFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E36A25-3682-4561-A8C6-0EA0512BDFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E36A25-3682-4561-A8C6-0EA0512BDFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E36A25-3682-4561-A8C6-0EA0512BDFA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
