@@ -1,7 +1,9 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
+@using TIK.Shared;
+@inject TIK.Frontend.Server.WeatherApiClient client;
 
-<PageTitle>Weather</PageTitle>
+<PageTitle>Weather</PageTitle> 
 
 <h1>Weather</h1>
 
@@ -43,22 +45,23 @@ else
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(500);
+        forecasts = await client.GetWeatherAsync();
 
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "FES.Gefrierend", "FES.Belebend", "FES.Kühl", "FES.Kühl", "FES.Mild", "FES.Warm", "FES.Lau", "FES.Heiß", "FES.Glühend", "FES.Sengend" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
+        // var startDate = DateOnly.FromDateTime(DateTime.Now);
+        // var summaries = new[] { "FES.Gefrierend", "FES.Belebend", "FES.Kühl", "FES.Kühl", "FES.Mild", "FES.Warm", "FES.Lau", "FES.Heiß", "FES.Glühend", "FES.Sengend" };
+        // forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        // {
+        //     Date = startDate.AddDays(index),
+        //     TemperatureC = Random.Shared.Next(-20, 55),
+        //     Summary = summaries[Random.Shared.Next(summaries.Length)]
+        // }).ToArray();
     }
 
-    private class WeatherForecast
-    {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
+    // private class WeatherForecast
+    // {
+    //     public DateOnly Date { get; set; }
+    //     public int TemperatureC { get; set; }
+    //     public string? Summary { get; set; }
+    //     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    // }
 }

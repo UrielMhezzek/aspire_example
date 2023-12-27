@@ -1,4 +1,7 @@
+using Microsoft.VisualBasic;
+using System.Threading.RateLimiting;
 using TIK.Frontend.Client.Pages;
+using TIK.Frontend.Server;
 using TIK.Frontend.Server.Components;
 
 namespace TIK.Frontend
@@ -14,6 +17,8 @@ namespace TIK.Frontend
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
+
+            builder.Services.AddHttpClient<WeatherApiClient>(x => x.BaseAddress = new Uri($"http://{TIK.Shared.Helper.Constants.BACKEND}"));
 
             var app = builder.Build();
 

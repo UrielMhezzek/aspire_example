@@ -1,7 +1,10 @@
+using TIK.Shared.Helper;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
-builder.AddProject<Projects.TIK_Backend>("tik.backend");
+var backend = builder.AddProject<Projects.TIK_Backend>(Constants.BACKEND);
 
-builder.AddProject<Projects.TIK_Frontend_Server>("tik.frontend.server");
+builder.AddProject<Projects.TIK_Frontend_Server>(Constants.FRONTEND)
+    .WithReference(backend);
 
 builder.Build().Run();
