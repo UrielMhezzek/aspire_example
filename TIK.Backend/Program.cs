@@ -1,4 +1,6 @@
 
+using TIK.Frontend.Server.Metrics;
+
 namespace TIK.Backend
 {
     public class Program
@@ -14,6 +16,9 @@ namespace TIK.Backend
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddMetrics();
+            builder.Services.AddSingleton<WeatherMetrics>();
 
             builder.Services.AddCors(options =>
             {

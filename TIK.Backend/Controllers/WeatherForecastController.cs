@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using TIK.Frontend.Server.Metrics;
 using TIK.Shared;
 
 namespace TIK.Backend.Controllers
@@ -13,22 +14,33 @@ namespace TIK.Backend.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly WeatherMetrics _weatherMetrics;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, WeatherMetrics weatherMetrics)
         {
             _logger = logger;
+            this._weatherMetrics = weatherMetrics;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            using var _ = _weatherMetrics.MeasureRequestDuration();
+            try
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                {
+                    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                    TemperatureC = Random.Shared.Next(-20, 55),
+                    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                })
+                .ToArray();
+            }
+            finally 
+            {
+                _weatherMetrics.IncreaseWeatherRequestCount();
+            }
+           
         }
     }
 }
