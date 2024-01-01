@@ -20,15 +20,15 @@ namespace TIK.Backend
             builder.Services.AddMetrics();
             builder.Services.AddSingleton<WeatherMetrics>();
 
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("MyCorsPolicy", builder =>
-                {
-                    builder.WithOrigins("https://localhost:7151") // URL des Frontends
-                           .AllowAnyHeader()
-                           .AllowAnyMethod();
-                });
-            });
+            //builder.Services.AddCors(options =>
+            //{
+            //    //options.AddPolicy("MyCorsPolicy", builder =>
+            //    //{
+            //    //    builder.WithOrigins("https://localhost:7151") // URL des Frontends
+            //    //           .AllowAnyHeader()
+            //    //           .AllowAnyMethod();
+            //    //});
+            //});
 
             var app = builder.Build();
 
