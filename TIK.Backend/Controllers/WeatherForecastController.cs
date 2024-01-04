@@ -1,3 +1,4 @@
+using Azure.Security.KeyVault.Secrets;
 using Microsoft.AspNetCore.Mvc;
 using TIK.Frontend.Server.Metrics;
 using TIK.Shared;
@@ -8,6 +9,8 @@ namespace TIK.Backend.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+
+
         private static readonly string[] Summaries = new[]
         {
             "Eisig", "Erfrischend", "Kühl", "Angenehm", "Mild", "Warm", "Sanft", "Heiß", "Schwül", "Sengend"
@@ -15,6 +18,7 @@ namespace TIK.Backend.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly WeatherMetrics _weatherMetrics;
+
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger, WeatherMetrics weatherMetrics)
         {
