@@ -4,3 +4,16 @@ GET {{TIK.Backend_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+
+GET {{TIK.Backend_HostAddress}}/secret
+
+###
+
+GET {{TIK.Backend_HostAddress}}/api/examples/getExample1
+
+###
+
+GET {{TIK.Backend_HostAddress}}/api/examples/getExample2
+
+###

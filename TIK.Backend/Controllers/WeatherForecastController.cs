@@ -6,7 +6,7 @@ using TIK.Shared;
 namespace TIK.Backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
 
