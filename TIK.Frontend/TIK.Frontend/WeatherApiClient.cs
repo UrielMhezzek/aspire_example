@@ -6,7 +6,7 @@ namespace TIK.Frontend.Server
     {
         public async Task<WeatherForecast[]> GetWeatherAsync()
         {
-            return await client.GetFromJsonAsync<WeatherForecast[]>("/weatherforecast") ?? [];
+            return await client.GetFromJsonAsync<WeatherForecast[]>("/api/weatherforecast") ?? [];
         }
     }
 }
