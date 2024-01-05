@@ -1,4 +1,3 @@
-
 using TIK.Frontend.Server.Metrics;
 
 namespace TIK.Backend
@@ -19,6 +18,8 @@ namespace TIK.Backend
 
             builder.Services.AddMetrics();
             builder.Services.AddSingleton<WeatherMetrics>();
+
+            builder.AddAzureKeyVaultSecrets("secrets");
 
             //builder.Services.AddCors(options =>
             //{
