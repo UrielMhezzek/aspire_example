@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Aspire\Aspire.ServiceDefaults\Aspire.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\TIK.Database\TIK.Database.csproj" />
     <ProjectReference Include="..\TIK.Shared\TIK.Shared.csproj" />
   </ItemGroup>
 

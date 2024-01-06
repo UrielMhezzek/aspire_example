@@ -20,7 +20,7 @@ namespace TIK.Backend.Controllers
         [HttpGet("getExample1")]
         public async Task<IActionResult> GetExample1()
         {
-            List<ExampleClass> classes = CreateExamplelist();
+            List<ExampleClass> classes = await CreateExampleListAsync();
 
             return Ok(classes);
         }
@@ -28,29 +28,31 @@ namespace TIK.Backend.Controllers
         [HttpGet("getExample2")]
         public async Task<ActionResult<List<ExampleClass>>> GetExample2()
         {
-            List<ExampleClass> classes = CreateExamplelist();
+            List<ExampleClass> classes = await CreateExampleListAsync();
 
             return Ok(classes);
         }
 
-        private List<ExampleClass> CreateExamplelist()
+        private async Task<List<ExampleClass>> CreateExampleListAsync()
         {
-            List<ExampleClass> classes = new List<ExampleClass>();
-            Random rnd = new Random();
-
-            for (int i = 0; i < 10; i++)
+            return await Task.Run(() =>
             {
-                ExampleClass example = new ExampleClass()
-                {
-                    MyProperty = rnd.Next(0, 9),
-                    MyProperty1 = rnd.Next(100, 801),
-                    MyProperty2 = rnd.Next(1300, 9000),
-                };
-                
+                List<ExampleClass> classes = new List<ExampleClass>();
+                Random rnd = new Random();
 
-                classes.Add(example);
-            }
-            return classes;
+                for (int i = 0; i < 10; i++)
+                {
+                    ExampleClass example = new ExampleClass()
+                    {
+                        MyProperty = rnd.Next(0, 9),
+                        MyProperty1 = rnd.Next(100, 801),
+                        MyProperty2 = rnd.Next(1300, 9000),
+                    };
+
+                    classes.Add(example);
+                }
+                return classes;
+            });
         }
     }
 

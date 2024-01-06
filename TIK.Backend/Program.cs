@@ -1,4 +1,6 @@
 using TIK.Frontend.Server.Metrics;
+using TIK.Database.Services;
+using Microsoft.Extensions.Configuration;
 
 namespace TIK.Backend
 {
@@ -7,6 +9,7 @@ namespace TIK.Backend
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            
             builder.AddServiceDefaults();
 
             // Add services to the container.
@@ -21,6 +24,10 @@ namespace TIK.Backend
 
             builder.AddAzureKeyVaultSecrets("secrets");
 
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=gmi-tik-Debug;Trusted_Connection=True;MultipleActiveResultSets=true;AttachDbFileName = D:\\OneDrive\\LocalDB\\Debug\\gmi-tik-Debug.mdf;";
+
+            builder.AddDatabase(connectionString);
+
             //builder.Services.AddCors(options =>
             //{
             //    //options.AddPolicy("MyCorsPolicy", builder =>
@@ -34,6 +41,8 @@ namespace TIK.Backend
             var app = builder.Build();
 
             app.MapDefaultEndpoints();
+            
+            app.InitializeDatabase();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
