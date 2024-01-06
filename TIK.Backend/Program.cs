@@ -24,7 +24,7 @@ namespace TIK.Backend
 
             builder.AddAzureKeyVaultSecrets("secrets");
 
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=gmi-tik-Debug;Trusted_Connection=True;MultipleActiveResultSets=true;AttachDbFileName = D:\\OneDrive\\LocalDB\\Debug\\gmi-tik-Debug.mdf;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=test-Debug;Trusted_Connection=True;MultipleActiveResultSets=true;AttachDbFileName = D:\\OneDrive\\LocalDB\\Debug\\test-Debug.mdf;";
 
             builder.AddDatabase(connectionString);
 
