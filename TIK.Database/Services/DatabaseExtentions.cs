@@ -8,9 +8,9 @@ namespace TIK.Database.Services
 {
     public static class DatabaseExtentions
     {
-        public static void AddDatabase(this WebApplicationBuilder builder, string connectionString)
+        public static void AddDatabase(this WebApplicationBuilder builder)
         {
-            builder.AddSqlServerDbContext<ApplicationDBContext>(connectionString!);
+            builder.AddSqlServerDbContext<ApplicationDBContext>("sqldata");
         }
 
 

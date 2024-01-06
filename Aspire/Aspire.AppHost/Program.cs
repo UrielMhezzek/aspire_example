@@ -4,6 +4,8 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var keyVault = builder.AddAzureKeyVault("secrets");
 
+//var sql = builder.AddSqlServer("SqlServer")
+//                 .AddDatabase("sqldata");
 
 var backend = builder.AddProject<Projects.TIK_Backend>(Constants.BACKEND)
      .WithReference(keyVault)
@@ -13,7 +15,6 @@ var backend = builder.AddProject<Projects.TIK_Backend>(Constants.BACKEND)
 builder.AddProject<Projects.TIK_Frontend_Server>(Constants.FRONTEND)
     .WithReference(backend);
 
-builder.AddProject<Projects.TIK_Database>("tik.database");
 
 builder.Build().Run();
 
